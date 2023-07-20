@@ -1,12 +1,28 @@
 <template>
   <div>
     <div v-if="loading">
-      <page-loading/>
+      <PageLoading/>
     </div>
-    <div v-if="api">
-      <h1>Contato</h1>
-      <p>API: {{ api }}</p>
-    </div>
+    <transition>
+      <div v-if="api">
+        <h1>{{api.titulo}}</h1>
+        <p>{{api.descricao}}</p>
+        <ul>
+          <li>
+            <b>Email:</b>
+            {{api.contato.email}}
+          </li>
+          <li>
+            <b>Telefone:</b>
+            {{api.contato.telefone}}
+          </li>
+          <li>
+            <b>Endereço:</b>
+            {{api.contato.endereco}}
+          </li>
+        </ul>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -14,17 +30,10 @@
 import fetchData from "@/mixins/fetchData.js";
 
 export default {
-  name: 'ContatoView',
+  name: "ContatoView",
   mixins: [fetchData],
-  components: {
-
-  },
-  created(){
-    this.fetchData('/' + this.$route.name)
+  created() {
+    this.fetchData("/contato");
   }
-}
+};
 </script>
-
-<style>
-
-</style>

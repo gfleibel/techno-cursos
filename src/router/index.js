@@ -20,6 +20,12 @@ const routes = [
     name: 'cursos',
     component: () => import("../views/CursosView.vue"),
   },
+  {
+    path: "/cursos/:curso",
+    name: "curso",
+    component: () => import("../views/CursoView.vue"),
+    props: true
+  },
 ]
 
 const router = new VueRouter({
