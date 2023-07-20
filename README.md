@@ -1,5 +1,14 @@
 # techno-cursos
 
+## Access project on GH Pages
+
+### Download api.json from public folder
+### Run json-server in same folder as api.json to access API
+```
+json-server api.json
+```
+### Access https://gfleibel.github.io/techno-cursos/
+
 ## Project setup
 ```
 npm install
@@ -10,7 +19,7 @@ npm install
 npm run serve
 ```
 
-### Runs API
+### Run json-server in same folder as api.json to access API
 ```
 json-server api.json
 ```
@@ -25,5 +34,3 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
