@@ -24,7 +24,15 @@ const routes = [
     path: "/cursos/:curso",
     name: "curso",
     component: () => import("../views/CursoView.vue"),
-    props: true
+    props: true,
+    children:[
+      {
+        path: ":aula",
+        name: "aula",
+        component: () => import("../views/AulaView.vue"),
+        props: true,
+      }
+    ]
   },
 ]
 

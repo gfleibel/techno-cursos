@@ -36,6 +36,7 @@ a {
 
 img {
   max-width: 100%;
+  margin-top: 30px;
 }
 
 a.router-link-active {
