@@ -1,18 +1,29 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <div v-if="loading">
+      <page-loading/>
+    </div>
+    <div v-if="api">
+      <h1>Home</h1>
+      <p>API: {{ api }}</p>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import fetchData from "@/mixins/fetchData.js";
 
 export default {
   name: 'HomeView',
+  mixins: [fetchData],
   components: {
-    HelloWorld
+
+  },
+  created() {
+    this.fetchData('/' + this.$route.name)
   }
 }
 </script>
+
+<style>
+</style>
